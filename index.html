@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aza's La victoire — Fashion Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f5ef;
+      --white: #fffdf9;
+      --black: #211f1c;
+      --brown: #867568;
+      --gold: #b49a70;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 245, 239, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e7e0d6;
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      font-weight: 700;
+      letter-spacing: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      transition: color .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      max-width: 1400px;
+      margin: auto;
+      padding: 75px 7% 85px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      color: var(--brown);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    h1 {
+      margin: 25px 0;
+      font-size: clamp(48px, 6.3vw, 88px);
+      letter-spacing: -2px;
+    }
+
+    h1 em {
+      color: var(--brown);
+      font-weight: 500;
+    }
+
+    .hero-text {
+      max-width: 430px;
+      color: #716960;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 25px;
+      background: var(--black);
+      color: white;
+      border: 1px solid var(--black);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      position: relative;
+      padding: 0 0 35px 30px;
+    }
+
+    .hero-image img {
+      height: 540px;
+      object-position: center 35%;
+    }
+
+    .image-note {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 17px 22px;
+      background: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 17px;
+      box-shadow: 0 8px 35px #0000000b;
+    }
+
+    .image-note span {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: 9px;
+      color: var(--brown);
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    /* MARQUEE */
+
+    .marquee {
+      overflow: hidden;
+      background: #e9e1d5;
+      padding: 18px 0;
+      white-space: nowrap;
+    }
+
+    .marquee-inner {
+      display: flex;
+      width: max-content;
+      animation: slide 28s linear infinite;
+    }
+
+    .marquee span {
+      padding-right: 45px;
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      letter-spacing: 3px;
+    }
+
+    @keyframes slide {
+      to { transform: translateX(-50%); }
+    }
+
+    /* COLLECTION */
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .collection {
+      max-width: 1400px;
+      margin: auto;
+      padding: 110px 7%;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 12px;
+      font-size: clamp(37px, 5vw, 57px);
+    }
+
+    .section-description {
+      max-width: 300px;
+      color: #716960;
+      font-size: 13px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      padding: 9px 17px;
+      background: transparent;
+      border: 1px solid #d9d0c4;
+      color: #716960;
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--black);
+      color: white;
+      border-color: var(--black);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .fashion-card {
+      transition: transform .35s, opacity .3s;
+    }
+
+    .fashion-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .fashion-card.hidden {
+      display: none;
+    }
+
+    .fashion-card img {
+      height: 390px;
+      background: #e5ddd2;
+      transition: filter .4s;
+    }
+
+    .fashion-card:hover img {
+      filter: brightness(.92);
+    }
+
+    .card-info {
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+    }
+
+    .card-info h3 {
+      font-size: 23px;
+    }
+
+    .card-info p {
+      color: var(--brown);
+      font-size: 11px;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+
+    .card-number {
+      font-size: 12px;
+      color: var(--brown);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #eae2d7;
+      padding: 100px 7%;
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .about-image img {
+      height: 520px;
+      object-position: center 30%;
+    }
+
+    .about-content h2 {
+      margin-bottom: 25px;
+    }
+
+    .about-content > p {
+      color: #625b53;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .signature {
+      margin-top: 28px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 28px;
+      color: var(--brown);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 1px solid #d2c5b5;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .stat span {
+      color: #716960;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* PHILOSOPHY */
+
+    .quote {
+      text-align: center;
+      padding: 105px 7%;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .quote h2 {
+      font-size: clamp(32px, 4.5vw, 53px);
+      line-height: 1.4;
+    }
+
+    .quote h2 em {
+      color: var(--brown);
+    }
+
+    .quote p {
+      margin-top: 24px;
+      color: var(--brown);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 7%;
+    }
+
+    .contact .eyebrow {
+      color: #c6ad89;
+    }
+
+    .contact h2 {
+      margin: 20px auto;
+      max-width: 700px;
+      font-size: clamp(40px, 6vw, 70px);
+    }
+
+    .contact > p {
+      color: #c9c0b6;
+      font-size: 13px;
+      margin: 0 auto 30px;
+    }
+
+    .contact .btn {
+      background: var(--cream);
+      border-color: var(--cream);
+      color: var(--black);
+    }
+
+    .contact .btn:hover {
+      background: transparent;
+      color: white;
+    }
+
+    footer {
+      background: var(--black);
+      color: #c9c0b6;
+      border-top: 1px solid #49443e;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 11px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* SCROLL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 55px;
+        gap: 35px;
+      }
+
+      .hero-image img {
+        height: 480px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .fashion-card img {
+        height: 320px;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image img {
+        height: 430px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      nav {
+        padding: 16px 6%;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 25px 7%;
+        flex-direction: column;
+        gap: 20px;
+        border-bottom: 1px solid #e7e0d6;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      h1 {
+        font-size: 52px;
+      }
+
+      .hero-image {
+        padding-left: 15px;
+      }
+
+      .hero-image img {
+        height: 400px;
+      }
+
+      .collection {
+        padding: 75px 6%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .fashion-card img {
+        height: 245px;
+      }
+
+      .card-info h3 {
+        font-size: 18px;
+      }
+
+      .card-info p {
+        font-size: 9px;
+      }
+
+      .about {
+        padding: 75px 6%;
+      }
+
+      .about-image img {
+        height: 360px;
+      }
+
+      .quote {
+        padding: 75px 6%;
+      }
+
+      .contact {
+        padding: 80px 6%;
+      }
+
+      footer {
+        padding: 24px 6%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="#home" class="logo"> Aza's La victoire.</a>
+
+      <button class="menu-btn" id="menuBtn"
+        aria-label="Buka menu" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collection">Collections</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Fashion Design Portfolio · 2026</p>
+
+        <h1>Classy<br>looks <br><em>Timeless charm  .</em></h1>
+
+        <p class="hero-text">
+          Selamat datang di Aza's La victoire. Kami menghadirkan koleksi pakaian kasual yang 
+          simpel,nyaman,dan dirancang untuk menemani aktivitas keseharianmu.
+        </p>
+
+        <a href="#collection" class="btn">Explore My Work ↗</a>
+      </div>
+
+      <div class="hero-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=85"
+          alt="Fashion editorial dengan busana elegan">
+
+        <div class="image-note">
+          Elegance in Every Detail
+          <span>THE ART OF DRESSING</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-label="Fashion design and creativity">
+      <div class="marquee-inner">
+        <span>✳ TIMELESS STYLE ✳ MODERN ELEGANCE ✳ CREATIVE EXPRESSION ✳ FASHION AS ART ✳ </span>
+        <span aria-hidden="true">✳ TIMELESS STYLE ✳ MODERN ELEGANCE ✳ CREATIVE EXPRESSION ✳ FASHION AS ART ✳ </span>
+      </div>
+    </div>
+
+    <section class="collection" id="collection">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">A Selection of My Work</p>
+          <h2>Curated Collections</h2>
+        </div>
+
+        <p class="section-description">
+          Dibuat dari bahan pilihan yang adem dan nyaman seharian. Yuk,uprade tampilan 
+          kasualmu bersama kami.
+        </p>
+      </div>
+
+      <div class="filters reveal" aria-label="Filter koleksi">
+        <button class="filter-btn active" data-filter="all">All Works</button>
+        <button class="filter-btn" data-filter="minimal">Minimalist</button>
+        <button class="filter-btn" data-filter="classic">Classic</button>
+        <button class="filter-btn" data-filter="street">Street Style</button>
+      </div>
+
+      <div class="gallery">
+        <article class="fashion-card reveal" data-category="minimal">
+          <img
+            src="63db81ad5161022925e0dd268ef91e0e.jpg"
+            alt="Inspirasi gaya fashion minimalis" loading="lazy">
+          <div class="card-info">
+            <div>
+              <h3>Soft Minimal</h3>
+              <p>MINIMALIST · 01</p>
+              <h3>Rp. 450.000</h3>
+            </div>
+            <span class="card-number">01 / 06</span>
+          </div>
+        </article>
+
+        <article class="fashion-card reveal" data-category="classic">
+          <img
+            src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85"
+            alt="Inspirasi busana klasik" loading="lazy">
+          <div class="card-info">
+            <div>
+              <h3>Modern Muse</h3>
+              <p>CLASSIC · 02</p>
+              <h3>Rp. 300.000 </h3>
+              
+                          </div>
+            <span class="card-number">02 / 06</span>
+          </div>
+        </article>
+
+        <article class="fashion-card reveal" data-category="street">
+          <img
+            src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85"
+            alt="Inspirasi street style fashion" loading="lazy">
+          <div class="card-info">
+            <div>
+              <h3>Urban Poise</h3>
+              <p>STREET STYLE · 03</p>
+              <h3>Rp. 150.000</h3>
+            </div>
+            <span class="card-number">03 / 06</span>
+          </div>
+        </article>
+
+        <article class="fashion-card reveal" data-category="classic">
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=85"
+            alt="Pilihan outfit untuk koleksi fashion" loading="lazy">
+          <div class="card-info">
+            <div>
+              <h3>Quiet Luxury</h3>
+              <p>CLASSIC · 04</p>
+              <h3>Rp.250.000</h3> 
+            </div>
+            <span class="card-number">04 / 06</span>
+          </div>
+        </article>
+
+        <article class="fashion-card reveal" data-category="minimal">
+          <img
+            src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=85"
+            alt="Inspirasi desain outfit kontemporer" loading="lazy">
+          <div class="card-info">
+            <div>
+              <h3>Neutral Mood</h3>
+              <p>MINIMALIST · 05</p>
+              <h3>Rp.150.000 </h3>
+            </div>
+            <span class="card-number">05 / 06</span>
+          </div>
+        </article>
+
+        <article class="fashion-card reveal" data-category="street">
+          <img
+            src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=85"
+            alt="Referensi busana streetwear" loading="lazy">
+          <div class="card-info">
+            <div>
+              <h3>Everyday Muse</h3>
+              <p>STREET STYLE · 06</p>
+              <h3>Rp. 300.000</h3>
+            </div>
+            <span class="card-number">06 / 06</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-image reveal">
+          <img
+            src="download (4).jpg"
+            alt="Fashion editorial untuk bagian profil"
+            loading="lazy">
+        </div>
+
+        <div class="about-content reveal">
+          <p class="eyebrow">Behind the Designs</p>
+          <h2>A little about<br>the creative mind.</h2>
+
+          <p>
+            Hi,I'm <strong> Aza's La Victoire</strong> — adalah perusahaan fashion yang 
+            berfokus pada penciptaan busana modern dan inovatif bagi wanita. Dengan mengutamakan
+            kualitas bahan dan desain yang tren, kami berkomitmen untuk menghadirkan koleksi pakaian 
+            yang tidak hanya stylish tetapi juga nyaman dipakai.Sehingga setiapproduk kami dirancang
+            untuk menampilkan kepribadian unik mereka dengan percaya diri.
+          </p>
+
+          <p>
+            Aza's La Victoire berusaha menjaga standar tinggi dalam setiap tahapan produksi.
+            Kami juga beradaptasi dengan perkembangan tren dunia fashion dan teknologi agar selalu
+            dapat memenuhi kebutuhan pasar yang dinamis.
+          </p>
+
+          <p>
+            Aza's La Victoire tidak hanya berfokus pada penjualan, tetapi juga pada apresiasi terhadap 
+            seni dan budaya mode lokal. Kami percaya bahwa fashion dapat menjadi medium untuk menyatukan
+            kreativitas dan inovasi daam sebuah identitas yang kuat.
+          </p>
+
+          <div class="signature">With creativity, always.</div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>06</strong>
+              <span>Featured Looks</span>
+            </div>
+            <div class="stat">
+              <strong>∞</strong>
+              <span>New Ideas</span>
+            </div>
+            <div class="stat">
+              <strong>01</strong>
+              <span>Creative Mind</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <p class="eyebrow">My Fashion Philosophy</p>
+      <h2>
+        "timeless style,
+        <em>endless</em> beauty."
+      </h2>
+      <p>DESIGN WITH PURPOSE · DRESS WITH FEELING</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">Let's Create Something Beautiful</p>
+      <h2>Have a project in mind?</h2>
+      <p>
+        Let's connect, share ideas, and bring creative visions to life.
+      </p>
+
+      <!-- Ganti alamat email di bawah dengan email kamu -->
+      <a class="btn"
+         href="mailto:yourname@email.com?subject=Fashion%20Portfolio">
+        Get in Touch ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo">Aza's La Victoire.</a>
+    <p>© <span id="year"></span> Aza's La Victoire . Made with creativity.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script>
+    // Tahun otomatis
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Menu untuk layar HP
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen);
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    // Filter kategori fashion
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const fashionCards = document.querySelectorAll(".fashion-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        fashionCards.forEach(card => {
+          const matches =
+            filter === "all" || card.dataset.category === filter;
+
+          card.classList.toggle("hidden", !matches);
+        });
+      });
+    });
+
+    // Animasi saat elemen masuk ke layar
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+
+</body>
+</html>
